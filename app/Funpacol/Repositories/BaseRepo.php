@@ -12,7 +12,9 @@ namespace App\Funpacol\Repositories;
 
 
 
-abstract class CrudRepo {
+use App\Funpacol\Entities\City;
+
+abstract class BaseRepo {
 
 
     protected $model ;
@@ -25,10 +27,46 @@ abstract class CrudRepo {
 
     abstract public function getModel();
 
+    public function cities()
+    {
+
+        return City::orderBy('name', 'DESC')->pluck('name','id');
+
+    }
+
 
     public function find($id)
     {
+
         return $this->model->find($id);
+
     }
+
+    public function create()
+    {
+        
+    }
+
+
+    public function store($request)
+    {
+
+
+    }
+
+    public function edit($id)
+    {
+
+    }
+
+
+    public function update($request, $id)
+    {
+
+    }
+
+
+
+
 
 }

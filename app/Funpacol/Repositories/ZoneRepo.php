@@ -9,7 +9,7 @@
 namespace App\Funpacol\Repositories;
 
 
-class ZoneRepo extends CrudRepo {
+class ZoneRepo extends BaseRepo {
 
 
     public function getModel()

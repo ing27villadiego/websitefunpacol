@@ -12,7 +12,7 @@ namespace App\Funpacol\Repositories;
 
 use App\Funpacol\Entities\City;
 
-class CityRepo extends CrudRepo {
+class CityRepo extends BaseRepo {
 
 
     public function getModel()

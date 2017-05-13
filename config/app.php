@@ -179,7 +179,15 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
+        // provider para module de user sentinel completo
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
+
+
+        // provider para instalar barra de debug
+        Barryvdh\Debugbar\ServiceProvider::class,
+
+        // provider de laravel collective
+        Collective\Html\HtmlServiceProvider::class,
 
 
 
@@ -234,9 +242,18 @@ return [
 
 
 
+        // alias para utilizar sentinel en el module de user
         'Activation' => Cartalyst\Sentinel\Laravel\Facades\Activation::class,
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
+
+        // alias para para llamar barra debug
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+
+
+        // alias para llamar laravel collective
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
     ],
 

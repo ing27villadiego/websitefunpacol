@@ -39,13 +39,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Funpacol</a>
+            <a class="navbar-brand" href="#">Fundación Padrinos de Colombia</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav nav-pills pull-right">
                 <!-- Authentication Links -->
                 @if (Auth::guest())
-                    <li><a href="#">Login</a></li>
+
+                    <a href="#login" class="btn btn-success personal" data-toggle="modal">Iniciar sesión</a>
+
                 @else
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Inicio</a></li>
@@ -83,6 +85,46 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+
+
+<div id="login" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Fundacion Padrinos de Colombia</h4>
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['route' => 'login', 'method'=>'POST', 'role' => 'form',  'autocomplete'=>'off']) !!}
+
+                {{ Form::token() }}
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"> <i class="fa fa-envelope"></i></span>
+                        {!! Form::email('email', null,['class'=>'form-control', 'placeholder'=>'Ejemplo@ejemplo.com']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1"> <i class="fa fa-lock"></i></span>
+                        {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Contraseña']) !!}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success pull-right" value="Entrar">
+                </div>
+
+                {!! Form::close() !!}
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
 
 
 <div class="container">
